@@ -1,11 +1,16 @@
 # MQBroker
 
-This is a "How To" guide on creating and using a custom MQTT broker in an 
+This is a "How To" guide on how to create and use a custom MQTT broker in an 
 Ignition application.
 
 The custom MQTT Broker was written in Go.
 
 This example assumes that MQTT Engine and Transmission modules has been installed.
+
+# Links
+
+[Modules Overview](https://docs.inductiveautomation.com/docs/8.1/getting-started/modules-overview)
+[Modules Downloads](https://inductiveautomation.com/downloads/third-party-modules/8.1.44)
 
 
 # Preparations
@@ -14,7 +19,7 @@ My version of ignition was installed in a Mac OS
 
     ./ignition.sh start
 
-That exposes localhost:8088 which is the gateway. 
+That exposes the gateway on  localhost:8088. 
 
 # Steps to integration a custom MQTT Broker 
 
@@ -26,6 +31,29 @@ That exposes localhost:8088 which is the gateway.
 # Step 1:  Create MQTT Broker
 
 `main.go` has the code which builds a server and exposes port `1884`. 
+
+Key part of the Go code is below with comments
+
+```go
+// These are MQTT libraries used to start up the server
+mqtt "github.com/mochi-co/mqtt/server"
+"github.com/mochi-co/mqtt/server/listeners"
+	
+// Custom port so we distinguish it from the default MQTT port of 1883
+port := ":1884"
+
+
+// Listen on TCP
+tcp := listeners.NewTCP("tcp1", port)
+
+// Add the listener to the server
+err := server.AddListener(tcp, nil)
+
+// Start the server
+if err := server.Serve(); err != nil {
+
+```
+
 
 To run this server go to a terminal and type: 
 
