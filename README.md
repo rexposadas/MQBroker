@@ -32,7 +32,7 @@ That exposes the gateway on  localhost:8088.
 
 `main.go` has the code which builds a server and exposes port `1884`. 
 
-Key part of the Go code is below with comments
+Key parts of the Go code is below with comments.
 
 ```go
 // These are MQTT libraries used to start up the server
@@ -84,7 +84,7 @@ Receiving that message indicates the the MQTT Broker is working.
 
 # Step 2: Integrate with Ignition
 
-Install the MQTT Engine and Transmission module. You should have these options on the left Navigation bar:
+Verify that you have MQTT Engine and Transmission modules installed. You should have these options on the left Navigation bar:
 
 
 ![Custom MQTT server](images/mqtt-server.png)
