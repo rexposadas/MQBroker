@@ -89,12 +89,14 @@ Install the MQTT Engine and Transmission module. You should have these options o
 
 ![Custom MQTT server](images/mqtt-server.png)
 
+![Modules Left Nav](images/modules-left-nav.png)
+
 
 In `MQTT Engine > Settings` create a custom namespace with a topic called `gallo`. 
 This is the topic that we will send a message to.  Ignition listens to this topic and sets the tag to the value of 
 the message. 
 
-![Modules Left Nav](images/modules-left-nav.png)
+![Custom Namespace](images/custom-namespace.png)
 
 
 # Step 3: Send message and check display
