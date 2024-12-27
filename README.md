@@ -76,7 +76,9 @@ tag with the message value.
 
     mosquitto_pub -h localhost -p 1884 -t gallo -m "Hi Gallo"
 
-Result of sending a message to the topic: 
+
+Go to the Designer and see that the value for the tag `gallo` was changed to the message `Hi Gallo`. That's the 
+message sent to the MQTT topic.
 
 ![Output](images/output.png)
 
