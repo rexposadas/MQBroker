@@ -1,6 +1,6 @@
 # MQBroker
 
-This is a "How To" guide on how to create and use a custom MQTT broker in an 
+This is a "How To" guide on creating and using a custom MQTT broker in an 
 Ignition application.
 
 The custom MQTT Broker was written in Go.
